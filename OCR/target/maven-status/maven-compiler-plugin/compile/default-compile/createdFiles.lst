@@ -1,0 +1,3 @@
+com\example\BusinessCardOcrApplication.class
+com\example\controller\OcrController.class
+com\example\service\OcrService.class

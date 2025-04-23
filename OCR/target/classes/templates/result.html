@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>OCR 결과</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .result-container {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        .error-message {
+            color: #ff0000;
+            padding: 10px;
+            background-color: #ffe6e6;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .back-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .back-btn:hover {
+            background-color: #45a049;
+        }
+        .info-item {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: white;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .info-label {
+            font-weight: bold;
+            color: #333;
+        }
+        .info-value {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+<h1>OCR 처리 결과</h1>
+
+<div th:if="${!success}" class="error-message">
+    <p th:text="${error}"></p>
+</div>
+
+<div th:if="${success}" class="result-container">
+    <div class="info-item">
+        <span class="info-label">이름:</span>
+        <span class="info-value" th:text="${name}"></span>
+    </div>
+    <div class="info-item">
+        <span class="info-label">회사:</span>
+        <span class="info-value" th:text="${company}"></span>
+    </div>
+    <div class="info-item">
+        <span class="info-label">직위:</span>
+        <span class="info-value" th:text="${position}"></span>
+    </div>
+    <div class="info-item">
+        <span class="info-label">휴대폰:</span>
+        <span class="info-value" th:text="${mobile}"></span>
+    </div>
+    <div class="info-item">
+        <span class="info-label">전화:</span>
+        <span class="info-value" th:text="${tel}"></span>
+    </div>
+    <div class="info-item">
+        <span class="info-label">팩스:</span>
+        <span class="info-value" th:text="${fax}"></span>
+    </div>
+    <div class="info-item">
+        <span class="info-label">이메일:</span>
+        <span class="info-value" th:text="${email}"></span>
+    </div>
+    <div class="info-item">
+        <span class="info-label">주소:</span>
+        <span class="info-value" th:text="${address}"></span>
+    </div>
+</div>
+
+<a href="/" class="back-btn">다시 시도하기</a>
+</body>
+</html> 
